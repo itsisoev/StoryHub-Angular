@@ -26,9 +26,16 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@taiga-ui/icons/src",
+                "output": "assets/taiga-ui/icons"
               }
             ],
             "styles": [
+              "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
+              "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
               "src/styles.scss"
             ]
           },
@@ -89,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b8f38948-c795-4b20-a52b-1a14448378be"
   }
 }
