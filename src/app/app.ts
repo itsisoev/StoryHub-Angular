@@ -1,10 +1,14 @@
-import {Component} from '@angular/core';
+import { TuiRoot } from "@taiga-ui/core";
+import {Component, inject} from '@angular/core';
+import {ThemeService} from './shared/services/theme.service';
+import {Header} from './layout/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [TuiRoot, Header],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
+  protected readonly theme = inject(ThemeService);
 }
