@@ -1,3 +1,43 @@
 <div class="header-container">
-  <uc-theme-toggle/>
+    <div class="header-container__left">
+        <uc-user-story-profile [images]="'https://i.pinimg.com/736x/0c/e3/44/0ce344fcf4762c0897be623333786ccb.jpg'"/>
+        <div class="line"></div>
+    </div>
+
+    <div class="header-container__main" tuiCarouselButtons>
+        <button
+                iconStart="@tui.chevron-left"
+                tuiIconButton
+                type="button"
+                (click)="carousel.prev()"
+        >
+            Previous
+        </button>
+
+        <tui-carousel
+            #carousel
+            class="carousel"
+            [draggable]="true"
+            [itemsCount]="7"
+            [(index)]="index"
+        >
+            @for (image of mockImages(); track image) {
+                <uc-user-story-profile *tuiItem [images]="image"/>
+            }
+        </tui-carousel>
+
+        <button
+                iconStart="@tui.chevron-right"
+                tuiIconButton
+                type="button"
+                (click)="carousel.next()"
+        >
+            Next
+        </button>
+    </div>
+
+    <div class="header-container__right">
+        <div class="line"></div>
+        <uc-theme-toggle/>
+    </div>
 </div>

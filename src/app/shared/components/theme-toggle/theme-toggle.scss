@@ -3,6 +3,8 @@
 }
 
 .theme-toggle-btn {
+  width: 3.75rem;
+  height: 3.75rem;
   border-radius: 50%;
   transition: background 0.25s ease, transform 0.2s ease;
   backdrop-filter: blur(8px);
@@ -20,4 +22,9 @@
 .dark .theme-toggle-btn:hover {
   background: rgba(255, 255, 255, 0.08);
 }
-
+@media (max-width: 480px) {
+  .theme-toggle-btn {
+    width: 1.5625rem;
+    height: 1.5625rem;
+  }
+}

@@ -5,6 +5,9 @@
   --text-secondary: #555555;
 
   --white: #ffffff;
+  --border-neutral: rgba(69, 78, 88, 0.24);
+  --avatar-border: rgba(69, 78, 88, 0.35);
+  --avatar-shadow: rgba(0, 0, 0, 0.08);
 }
 
 .dark {
@@ -12,4 +15,6 @@
   --bg-secondary: #1a1a1c;
   --text-primary: #f5f5f7;
   --text-secondary: #a1a1aa;
+  --avatar-border: rgba(255, 255, 255, 0.18);
+  --avatar-shadow: rgba(0, 0, 0, 0.55);
 }
