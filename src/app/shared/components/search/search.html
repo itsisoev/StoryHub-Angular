@@ -1,0 +1,26 @@
+<button
+  tuiIconButton
+  appearance="secondary"
+  class="search-btn"
+  (click)="showDialog()"
+>
+  <tui-icon
+    [icon]="'search'"
+  />
+</button>
+
+<ng-template
+  let-observer
+  [tuiDialogOptions]="{label: title(), size: 's'}"
+  [(tuiDialog)]="open"
+>
+  <form
+  >
+    <p>{{ desc() }}</p>
+    <tui-input
+      tuiAutoFocus
+    >
+      Введите имя друга
+    </tui-input>
+  </form>
+</ng-template>
