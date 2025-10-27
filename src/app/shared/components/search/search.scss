@@ -28,3 +28,15 @@
     height: 1.5625rem;
   }
 }
+
+.item-container {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+
+  p {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+}

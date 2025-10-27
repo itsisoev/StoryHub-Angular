@@ -18,7 +18,6 @@ import {TuiAutoFocus} from '@taiga-ui/cdk';
 })
 export class Search {
   title = input('');
-  desc = input('')
 
   open = signal<boolean>(false);
 

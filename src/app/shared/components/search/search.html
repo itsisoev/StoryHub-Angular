@@ -11,12 +11,15 @@
 
 <ng-template
   let-observer
-  [tuiDialogOptions]="{label: title(), size: 's'}"
+  [tuiDialogOptions]="{size: 's'}"
   [(tuiDialog)]="open"
 >
   <form
   >
-    <p>{{ desc() }}</p>
+    <div class="item-container">
+      <img src="assets/svg/people/men-crutches.svg" width="100" alt="">
+      <p>{{ title() }}</p>
+    </div>
     <tui-input
       tuiAutoFocus
     >
