@@ -1,0 +1,39 @@
+<form class="auth-container" [formGroup]="authForm" (submit)="onSubmit()">
+  <div class="auth-container__wrapper">
+    <div class="auth-container__header">
+      <h2>Добро пожаловать в <br>
+        <span>StoryHub</span>
+      </h2>
+    </div>
+
+    <div class="auth-container__input">
+      <tui-textfield>
+        <label tuiLabel>Введите имя</label>
+        <input
+          placeholder="Введите имя"
+          formControlName="username"
+          tuiTextfield
+          type="text"
+        />
+      </tui-textfield>
+    </div>
+
+    <div class="auth-container__input">
+      <tui-textfield>
+        <label tuiLabel>Введите пароль</label>
+        <input
+          placeholder="Введите пароль"
+          tuiTextfield
+          formControlName="password"
+          type="password"
+        />
+        <tui-icon tuiPassword/>
+      </tui-textfield>
+    </div>
+
+    <div class="auth-container__buttons">
+      <button tuiButton [loading]="isLoading()">Создать аккаунт</button>
+      <a routerLink="/auth/login">У меня есть аккаунт</a>
+    </div>
+  </div>
+</form>
