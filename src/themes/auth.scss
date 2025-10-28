@@ -1,0 +1,52 @@
+.auth-container {
+  width: 100%;
+  min-height: 80vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+
+  &__wrapper {
+    width: 37.5rem;
+    height: 100%;
+    background-color: var(--background-muted);
+    border-radius: 0.625rem;
+    padding: 1.25rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+
+    h2 {
+      text-align: left;
+      font-size: 1.5625rem;
+      line-height: 1.9rem;
+    }
+
+    span {
+      color: var(--text-secondary);
+    }
+  }
+
+  &__input {
+    margin: 1rem 0;
+  }
+
+  &__buttons {
+    gap: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+
+    a {
+      text-align: right;
+      margin: 0.625rem 0;
+      font-size: 1.25rem;
+    }
+  }
+}

@@ -2,12 +2,16 @@
           [class.dark]="theme.theme() === 'dark'"
 >
   <div class="app-container">
-    <div class="app-container__header">
-      <layout-header/>
-    </div>
+    @if (showHeader()) {
+      <div class="app-container__sidebar">
+        <layout-header/>
+      </div>
+    }
 
     <div class="app-container__routes">
       <layout-home/>
     </div>
   </div>
+
+  <tui-alerts/>
 </tui-root>
