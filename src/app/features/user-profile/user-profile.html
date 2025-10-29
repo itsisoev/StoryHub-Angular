@@ -1,0 +1,47 @@
+<div class="profile-user">
+  <div class="profile-user__wrapper">
+    <div class="user-left">
+      <div class="user-image" (click)="onAvatarClick()">
+        <img
+          [src]="getAvatarUrl()"
+          alt="Аватар"
+        />
+        <input
+          type="file"
+          #fileInput
+          accept="image/*"
+          (change)="onFileSelected($event)"
+          style="display:none"
+        />
+      </div>
+    </div>
+
+    <div class="user-right">
+      <div class="user-friend">
+        <div class="count-friend">
+          <h2>У вас 300 друзей</h2>
+        </div>
+
+        <div class="friends-button">
+          <button
+            tuiIconButton
+            appearance="secondary"
+          >
+            <tui-icon
+              [icon]="'eye'"
+            />
+          </button>
+        </div>
+      </div>
+
+      <div class="user-info">
+        <h1>Имя пользователя: {{ profileData()?.username }}</h1>
+        <h2>Обо мне: {{profileData()?.aboutMe ?? "--"}}</h2>
+      </div>
+    </div>
+  </div>
+
+  @if (isLoading()) {
+    <tui-loader/>
+  }
+</div>

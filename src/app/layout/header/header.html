@@ -1,6 +1,8 @@
 <div class="header-container">
   <div class="header-container__left">
-    <uc-user-story-profile [images]="'https://i.pinimg.com/736x/0c/e3/44/0ce344fcf4762c0897be623333786ccb.jpg'"/>
+    <a [routerLink]="['/profile', userUUID()]">
+      <uc-user-story-profile [images]="'https://i.pinimg.com/736x/0c/e3/44/0ce344fcf4762c0897be623333786ccb.jpg'"/>
+    </a>
     <div class="line"></div>
   </div>
 

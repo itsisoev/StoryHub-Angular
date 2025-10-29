@@ -1,22 +1,28 @@
-import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, effect, inject, signal} from '@angular/core';
 import {ThemeToggle} from '../../shared/components/theme-toggle/theme-toggle';
 import {UserStoryProfile} from "../../shared/components/user-story-profile/user-story-profile";
 import {TuiButton} from '@taiga-ui/core';
 import {TuiCarousel} from '@taiga-ui/kit';
 import {Search} from '../../shared/components/search/search';
+import {AuthService} from '../../shared/services/auth.service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'layout-header',
   imports: [
     ThemeToggle,
-    UserStoryProfile, TuiCarousel, TuiButton, Search
+    UserStoryProfile, TuiCarousel, TuiButton, Search, RouterLink
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
+  private readonly authService = inject(AuthService);
   protected index = signal<number>(0);
+
+  userUUID = this.authService.userId;
+
   mockImages = signal([
     'https://i.pinimg.com/736x/0f/7a/1b/0f7a1b44a772a294b3b17bd62e3b3edb.jpg',
     'https://i.pinimg.com/736x/9d/6c/b2/9d6cb2ff813dffe31d654767b5389b35.jpg',

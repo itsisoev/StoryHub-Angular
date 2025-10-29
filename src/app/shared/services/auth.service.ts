@@ -61,19 +61,6 @@ export class AuthService {
     );
   }
 
-  getUserById(userId: string): Observable<IUser | null> {
-    if (!userId) {
-      return of(null);
-    }
-
-    return this.http.get<IUser>(`${this.api}auth/${userId}`).pipe(
-      catchError((err) => {
-        console.error('Get user by ID error', err);
-        return of(null);
-      })
-    );
-  }
-
   private checkToken(): void {
     const token = localStorage.getItem('access_token');
     if (token) {
@@ -92,7 +79,7 @@ export class AuthService {
     const isExpired = this.jwtHelper.isTokenExpired(token);
     if (!isExpired) {
       const decodedToken = this.jwtHelper.decodeToken<IDecodedToken>(token);
-      this.userId.set(decodedToken?.uuid || '');
+      this.userId.set(decodedToken?.sub || '');
       this.isLoggedIn.set(true);
     } else {
       this.clearToken();
