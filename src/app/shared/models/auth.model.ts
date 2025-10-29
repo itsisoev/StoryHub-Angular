@@ -7,7 +7,7 @@ export interface IAuth {
 }
 
 export interface IDecodedToken {
-  uuid: string;
+  sub: string;
   username: string;
   exp: number;
   iat: number;
